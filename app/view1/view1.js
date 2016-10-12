@@ -2,22 +2,17 @@
 
 angular.module('myApp.view1', ['ngRoute','datatables'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
-  });
-}])
-
-.controller('View1Ctrl', ['$http', '$q', 'DTOptionsBuilder', 'DTColumnBuilder', function($http, $q, DTOptionsBuilder, DTColumnBuilder) {
+.controller('View1Ctrl', ['$http', '$q', 'DTOptionsBuilder', 'DTColumnBuilder','articleService','$scope', function($http, $q, DTOptionsBuilder, DTColumnBuilder, articleService, $scope) {
     var vm = this;
 
     vm.dtOptions = DTOptionsBuilder.fromFnPromise(getData());
 
     function getData() {
         var defer = $q.defer();
-        $http.get('http://localhost:8080/article?category=Category:Studies&limit=10&getContent=true&cmContinue').then(function (result) {
+        $http.get('http://localhost:8080/article?category=Category:Studies&limit=100&getContent=true&cmContinue').then(function (result) {
             defer.resolve(result['data']['articles']);
+            articleService.setArticleList(result['data']['articles']);
+            console.log(articleService.getArticle());
         });
         return defer.promise;
     }
@@ -27,5 +22,10 @@ angular.module('myApp.view1', ['ngRoute','datatables'])
         DTColumnBuilder.newColumn('name').withTitle('Name'),
         DTColumnBuilder.newColumn('year').withTitle('Year')
     ];
+
+    function someClickHandler(info) {
+        console.log(info);
+        $location.path( "/page/" + info.id );
+    }
 
 }]);
