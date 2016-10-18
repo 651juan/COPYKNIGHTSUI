@@ -1,3 +1,43 @@
-<div ng-controller="View1Ctrl as showCase">
-    <table datatable="" dt-options="showCase.dtOptions" dt-columns="showCase.dtColumns" class="row-border hover"></table>
-</div>
+<table st-table="displayedCollection" class="table table-striped" st-safe-src="rowCollection">
+    <thead>
+    <tr>
+        <th>
+            <input st-search="name" placeholder="search for name" class="input-sm form-control" type="search"/>
+        </th>
+        <th>
+            <input st-search="year" placeholder="search for year" class="input-sm form-control" type="search"/>
+        </th>
+    </tr>
+    <tr>
+        <th st-sort="name">Title</th>
+        <th st-sort="year">Year</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="row in displayedCollection">
+        <td>{{row.name}}</td>
+        <td>{{row.year}}</td>
+        <td>
+            <button type="button" ng-click="view(row)" class="btn btn-success">
+                View More Info
+            </button>
+        </td>
+
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="3" class="text-center">
+            <div st-template="pagination.html" st-pagination="" st-items-by-page="ctrl.itemsByPage"></div>
+        </td>
+        <td colspan="2">
+            <div class="btn-group pull-right ng-scope">
+                <!-- could be within a ng-repeat-->
+                <button type="button" ng-class="{'active':ctrl.itemsByPage==10}" ng-click="ctrl.itemsByPage=10" class="btn btn-default">10</button>
+                <button type="button" ng-class="{'active':ctrl.itemsByPage==25}" ng-click="ctrl.itemsByPage=25" class="btn btn-default">25</button>
+                <button type="button" ng-class="{'active':ctrl.itemsByPage==50}" ng-click="ctrl.itemsByPage=59" class="btn btn-default">50</button>
+            </div>
+        </td>
+    </tr>
+    </tfoot>
+</table>

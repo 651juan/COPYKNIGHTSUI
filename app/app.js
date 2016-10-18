@@ -6,7 +6,7 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.version',
-    'datatables',
+    'smart-table',
     'myApp.articleService'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
