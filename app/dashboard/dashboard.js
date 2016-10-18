@@ -13,7 +13,10 @@ angular.module('myApp.dashboard', ['ngRoute'])
 
             for (var i = 0; i < keys.length; i++) {
                 data.labels.push(keys[i]);
-                data.series[0].push(result['data'][keys[i]]);
+                data.series[0].push({
+                    meta: 'Studies found for ' + keys[i],
+                    value: result['data'][keys[i]]
+                });
 
             }
 
@@ -25,7 +28,11 @@ angular.module('myApp.dashboard', ['ngRoute'])
     var options = {
         seriesBarDistance: 10,
         width: 700,
-        height: 500
+        height: 500,
+        plugins: [
+            Chartist.plugins.tooltip()
+        ]
+
 
     };
 
