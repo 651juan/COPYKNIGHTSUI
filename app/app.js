@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.view1',
   'myApp.view2',
+  'myApp.dashboard',
   'myApp.version',
     'smart-table',
     'myApp.articleService'
@@ -20,5 +21,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
       .when("/page/:id", {
         templateUrl: '/view2/view2.html',
         controller: 'View2Ctrl'
+      })
+      .when("/dashboard", {
+          templateUrl: '/dashboard/dashboard.html',
+          controller: 'DashboardCtrl'
       });
 }]);

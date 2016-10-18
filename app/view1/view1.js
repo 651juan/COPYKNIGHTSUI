@@ -2,7 +2,7 @@
 
 angular.module('myApp.view1', ['ngRoute'])
 
-.controller('View1Ctrl', ['$http', '$q','articleService','$scope', '$window', function($http, $q, articleService, $scope, $window) {
+.controller('View1Ctrl', ['$http', '$q','articleService','$scope', '$location', function($http, $q, articleService, $scope, $location) {
     $scope.displayedCollection = [];
 
     function getData() {
@@ -17,7 +17,7 @@ angular.module('myApp.view1', ['ngRoute'])
     getData();
 
     $scope.view = function view(row) {
-        $window.location.href = '/page/' + row.pageid;
+        $location.path = '/page/' + row.pageid;
     }
 
 
