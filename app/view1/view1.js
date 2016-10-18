@@ -23,5 +23,9 @@ angular.module('myApp.view1', ['ngRoute','datatables'])
         DTColumnBuilder.newColumn('year').withTitle('Year')
     ];
 
+    function someClickHandler(info) {
+        console.log(info);
+        $location.path( "/page/" + info.id );
+    }
 
 }]);
