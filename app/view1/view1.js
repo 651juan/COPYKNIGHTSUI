@@ -6,7 +6,7 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.displayedCollection = [];
 
     function getData() {
-        $http.get('http://localhost:8080/article?category=Category:Studies&limit=100&getContent=true&cmContinue').then(function (result) {
+        $http.get('http://localhost:8080/article').then(function (result) {
             $scope.rowCollection  = result['data']['articles'];
             $scope.displayedCollection = result['data']['articles'];
             articleService.setArticleList(result['data']['articles']);
