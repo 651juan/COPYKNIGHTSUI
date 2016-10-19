@@ -3,8 +3,12 @@
 angular.module('myApp.view2', ['ngRoute'])
 
 
-.controller('View2Ctrl', ['$routeParams', 'articleService','$filter',function($routeParams, articleService, $filter) {
+.controller('View2Ctrl', ['$routeParams', 'articleService','$filter', '$http',function($routeParams, articleService, $filter, $http) {
   console.log('cont2');
-  var newTemp = $filter("filter")(articleService.getArticle(), {pageid: $routeParams.id});
-  console.log(articleService.getArticle());
+    $http.get('http://localhost:8080/article').then(function (result) {
+       var ans = result['data']['articles'].filter(function (el) {
+            return el.pageid == $routeParams.id;
+        });
+        console.log(ans);
+    });
 }]);
