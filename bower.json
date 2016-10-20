@@ -13,7 +13,6 @@
     "html5-boilerplate": "^5.3.0",
     "angular-smart-table": "2.1.8",
     "bootstrap": "latest",
-    "chartist": "0.9.8",
-    "chartist-plugin-tooltip": "latest"
+    "chart.js": "2.3.0"
   }
 }
