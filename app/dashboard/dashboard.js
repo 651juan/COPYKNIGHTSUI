@@ -15,6 +15,6 @@ angular.module('myApp.dashboard', ['ngRoute'])
         }
         init();
 
-    }])
+    }]);
 
 
