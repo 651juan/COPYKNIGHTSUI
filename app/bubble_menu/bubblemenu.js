@@ -1,8 +1,15 @@
 var mainMenuJson = "mainmenu.json";
-var w = window.innerWidth*0.68*0.95;
-var h = Math.ceil(w*0.7);
+//var w = window.innerWidth*0.68*0.95;
+var w = window.innerWidth;
+//var h = Math.ceil(w*0.7);
+var h = window.innerHeight;
+
 var oR = 0;
 var nTop = 0;
+//Changed Here
+var scale = 3;
+var scale2 = 5;
+//End Change
 
 var svgContainer = d3.select("#mainBubble")
   .style("height", h+"px");
@@ -44,7 +51,7 @@ d3.json(localStorage.getItem("currentPath"), function(error, root) {
 		 
 	console.log(root);  
 	nTop = root.children.length;
-	oR = w/(1+3*nTop);  
+	oR = w/(scale2+scale*nTop);  
 
 	h = Math.ceil(w/nTop*2);
 	svgContainer.style("height",h+"px");
@@ -135,10 +142,12 @@ d3.json(localStorage.getItem("currentPath"), function(error, root) {
 	}); 
 
 resetBubbles = function () {
-  w = window.innerWidth*0.68*0.95;
-  oR = w/(1+3*nTop);
+  //w = window.innerWidth*0.68*0.95;
+  w = window.innerWidth;
+  oR = w/(scale2+scale*nTop);
    
-  h = Math.ceil(w/nTop*2);
+  //h = Math.ceil(w/nTop*2);
+  h = window.innerHeight;
   svgContainer.style("height",h+"px");
 
   //mainNote.attr("y",h-15);
