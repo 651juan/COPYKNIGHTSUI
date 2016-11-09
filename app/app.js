@@ -6,7 +6,8 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.dashboard',
-  'myApp.version',
+    'myApp.net',
+    'myApp.version',
     'smart-table',
     'myApp.articleService'
 ]).
@@ -21,6 +22,10 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
       .when("/page/:id", {
         templateUrl: '/view2/view2.html',
         controller: 'View2Ctrl'
+      })
+      .when("/net", {
+          templateUrl: '/net/net.html',
+          controller: 'netCtrl'
       })
       .when("/dashboard", {
           templateUrl: '/dashboard/dashboard.html',
