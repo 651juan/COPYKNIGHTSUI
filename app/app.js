@@ -15,7 +15,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   $locationProvider.hashPrefix('!');
 
   $routeProvider
-      .when("/",{
+      .when("/articles/:type/:condition",{
         templateUrl: '/view1/view1.html',
         controller: 'View1Ctrl'
       })
