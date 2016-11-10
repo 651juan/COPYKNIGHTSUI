@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.dashboard',
     'myApp.net',
     'myApp.version',
+    'myApp.graph',
     'smart-table',
     'myApp.articleService'
 ]).

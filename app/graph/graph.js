@@ -1,11 +1,43 @@
-angular.module('myApp.graph', ['ngRoute']).controller('graphCtrl', ['articleService', '$http','$scope',function(articleService,$http, $scope) {
+angular.module('myApp.graph', ['ngRoute']).controller('graphCtrl', ['$http','$scope',function($http, $scope) {
+
+    $scope.graphs = [
+        {   name : 'Year',
+            url : 'http://localhost:8080/year'
+        },
+        {
+            name : 'Country',
+            url : 'http://localhost:8080/country'
+        },
+        {
+            name : 'Author',
+            url : 'http://localhost:8080/author'
+        },
+        {
+            name : 'Industry',
+            url : 'http://localhost:8080/industry'
+        },
+        {
+            name : 'Fundamental',
+            url : 'http://localhost:8080/fundamental'
+        },
+        {
+            name : 'Evidence',
+            url : 'http://localhost:8080/evidence'
+        }];
 
     function init() {
-        $http.get('http://localhost:8080/year').then(function (result) {
+        var x;
+        for (x in $scope.graphs) {
+            window[$scope.graphs[x].name] = getData($scope.graphs[x].name, $scope.graphs[x].url);
+        }
+    }
+
+    function getData(name, url) {
+        $http.get(url).then(function (result) {
             var data = {
                 labels: [],
                 datasets: [{
-                    label: "My Dataset",
+                    label: name,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -35,13 +67,14 @@ angular.module('myApp.graph', ['ngRoute']).controller('graphCtrl', ['articleServ
             }
 
             console.log(data);
-            var ctx = document.getElementById("myChart");
-            var myBarChart = new Chart(ctx, {
+            var ctx = document.getElementById(name);
+            return new Chart(ctx, {
                 type: 'bar',
                 data: data,
                 options: {}
             });
         });
+
     }
 
     init();
