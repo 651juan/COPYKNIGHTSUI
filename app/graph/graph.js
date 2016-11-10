@@ -2,37 +2,43 @@ angular.module('myApp.graph', ['ngRoute']).controller('graphCtrl', ['$http','$sc
 
     $scope.graphs = [
         {   name : 'Year',
-            url : 'http://localhost:8080/year'
+            url : 'http://localhost:8080/year',
+            type : 'line'
         },
         {
             name : 'Country',
-            url : 'http://localhost:8080/country'
+            url : 'http://localhost:8080/country',
+            type : 'bar'
         },
         {
             name : 'Author',
-            url : 'http://localhost:8080/author'
+            url : 'http://localhost:8080/author',
+            type : 'radar'
         },
         {
             name : 'Industry',
-            url : 'http://localhost:8080/industry'
+            url : 'http://localhost:8080/industry',
+            type : 'polarArea'
         },
         {
             name : 'Fundamental',
-            url : 'http://localhost:8080/fundamental'
+            url : 'http://localhost:8080/fundamental',
+            type : 'pie'
         },
         {
             name : 'Evidence',
-            url : 'http://localhost:8080/evidence'
+            url : 'http://localhost:8080/evidence',
+            type : 'doughnut'
         }];
 
     function init() {
         var x;
         for (x in $scope.graphs) {
-            window[$scope.graphs[x].name] = getData($scope.graphs[x].name, $scope.graphs[x].url);
+            window[$scope.graphs[x].name] = getData($scope.graphs[x].name, $scope.graphs[x].url, $scope.graphs[x].type);
         }
     }
 
-    function getData(name, url) {
+    function getData(name, url, type) {
         $http.get(url).then(function (result) {
             var data = {
                 labels: [],
@@ -69,7 +75,7 @@ angular.module('myApp.graph', ['ngRoute']).controller('graphCtrl', ['$http','$sc
             console.log(data);
             var ctx = document.getElementById(name);
             return new Chart(ctx, {
-                type: 'bar',
+                type: type,
                 data: data,
                 options: {}
             });
