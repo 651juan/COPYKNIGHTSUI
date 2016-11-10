@@ -1,5 +1,36 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<head>
+
+</head>
+
+<body>
+<h1> Article Overview</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 sidebar-left">
+      <h2>Sidebar left</h2>
+
+    </div>
+    <div class="col-md-8 article">
+      <h2>Title</h2>
+      {{title}}
+      <h2>Citation</h2>
+      {{citation}}
+      <h2>Authors</h2>
+      <div ng-repeat="x in authors">{{x}}</div>
+    </div>
+    <div class="col-md-2 sidebar-right">
+
+      <h3>Categories</h3>
+      <h3>Recommened Articles</h3>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+<footer>
+
+</footer>
+
+

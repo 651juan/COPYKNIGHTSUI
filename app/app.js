@@ -30,5 +30,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
       .when("/dashboard", {
           templateUrl: '/dashboard/dashboard.html',
           controller: 'DashboardCtrl'
+      })
+      .when("/graph", {
+          templateUrl: '/graph/graph.html',
+          controller: 'graphCtrl'
       });
 }]);

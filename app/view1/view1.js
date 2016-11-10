@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myApp.view1', ['ngRoute'])
-    .controller('View1Ctrl', ['$routeParams','$http', '$q','articleService','$scope', '$location', function($routeParams, $http, $q, articleService, $scope, $location) {
+    .controller('View1Ctrl', ['$routeParams','$http', '$q','articleService','$scope', '$location', '$rootScope', function($routeParams, $http, $q, articleService, $scope, $location, $rootScope) {
     $scope.displayedCollection = [];
 
     var url = getUrl($routeParams.type, $routeParams.condition);
@@ -42,7 +42,7 @@ angular.module('myApp.view1', ['ngRoute'])
     }
 
     $scope.view = function view(row) {
-        $location.path = '/page/' + row.pageid;
+        window.location = "http://localhost:8000/#!/page/" + row.pageid;
     }
 
 }]);
