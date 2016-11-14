@@ -16,13 +16,21 @@
       <h2>Citation</h2>
       {{citation}}
       <h2>Authors</h2>
-      <div ng-repeat="x in authors">{{x}}</div>
+      <div ng-repeat="x in authors">
+        <a href="#!/articles/author/{{x}}">
+          {{x}}
+        </a>
+      </div>
     </div>
     <div class="col-md-2 sidebar-right">
 
       <h3>Categories</h3>
       <h3>Recommened Articles</h3>
-      <div ng-repeat="x in similar">{{x.name}}</div>
+      <div ng-repeat="x in similar">
+        <a href="#!/page/{{x.pageid}}">
+          {{x.name}}
+        </a>
+      </div>
     </div>
   </div>
 </div>

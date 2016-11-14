@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
+angular.module('myApp.article', ['ngRoute'])
 
 
-.controller('View2Ctrl', ['$routeParams', 'articleService','$filter', '$http', '$scope',function($routeParams, articleService, $filter, $http, $scope) {
+.controller('ArticleCtrl', ['$routeParams','$filter', '$http', '$scope',function($routeParams, $filter, $http, $scope) {
   console.log('cont2');
         function init() {
             $http.get('http://localhost:8080/article').then(function (result) {

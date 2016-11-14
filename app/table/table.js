@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
-    .controller('View1Ctrl', ['$routeParams','$http', '$q','articleService','$scope', '$location', '$rootScope', function($routeParams, $http, $q, articleService, $scope, $location, $rootScope) {
+angular.module('myApp.table', ['ngRoute'])
+    .controller('TableCtrl', ['$routeParams','$http', '$q','$scope', '$location', '$rootScope', function($routeParams, $http, $q, $scope, $location, $rootScope) {
     $scope.displayedCollection = [];
 
     var url = getUrl($routeParams.type, $routeParams.condition);
@@ -12,8 +12,6 @@ angular.module('myApp.view1', ['ngRoute'])
         $http.get(url).then(function (result) {
             $scope.rowCollection  = result['data']['articles'];
             $scope.displayedCollection = result['data']['articles'];
-            articleService.setArticleList(result['data']['articles']);
-            console.log(articleService.getArticle());
         });
     }
 

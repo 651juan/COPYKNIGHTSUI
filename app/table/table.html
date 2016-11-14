@@ -2,20 +2,27 @@
     <thead>
     <tr>
         <th>
-            <input st-search="name" placeholder="search for name" class="input-sm form-control" type="search"/>
+            <input st-search="title" placeholder="search for title" class="input-sm form-control" type="search"/>
+        </th>
+        <th>
+            <input st-search="author" placeholder="search for author" class="input-sm form-control" type="search"/>
         </th>
         <th>
             <input st-search="year" placeholder="search for year" class="input-sm form-control" type="search"/>
         </th>
     </tr>
     <tr>
-        <th st-sort="name">Title</th>
+        <th st-sort="title">Title</th>
+        <th st-sort="author">Author</th>
         <th st-sort="year">Year</th>
     </tr>
     </thead>
     <tbody>
     <tr ng-repeat="row in displayedCollection">
-        <td>{{row.name}}</td>
+        <td>{{row.title}}</td>
+        <td>
+            <div ng-repeat="author in row.authors">{{author}}</div>
+        </td>
         <td>{{row.year}}</td>
         <td>
             <button type="button" ng-click="view(row)" class="btn btn-success">

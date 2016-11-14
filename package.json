@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "Copyknights EU Hackathon UI",
   "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "version": "0.0.1",
+  "description": "A User Interface for the Copyknights hackathon API",
+  "repository": "https://github.com/651juan/COPYKNIGHTSServer",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",

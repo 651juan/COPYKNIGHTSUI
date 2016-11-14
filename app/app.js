@@ -3,26 +3,24 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
+  'myApp.table',
+  'myApp.article',
   'myApp.dashboard',
     'myApp.net',
-    'myApp.version',
     'myApp.graph',
-    'smart-table',
-    'myApp.articleService'
+    'smart-table'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
   $routeProvider
       .when("/articles/:type/:condition",{
-        templateUrl: '/view1/view1.html',
-        controller: 'View1Ctrl'
+        templateUrl: '/table/table.html',
+        controller: 'TableCtrl'
       })
       .when("/page/:id", {
-        templateUrl: '/view2/view2.html',
-        controller: 'View2Ctrl'
+        templateUrl: '/article/article.html',
+        controller: 'ArticleCtrl'
       })
       .when("/net", {
           templateUrl: '/net/net.html',
