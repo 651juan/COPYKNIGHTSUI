@@ -34,8 +34,8 @@
       <h3>Categories</h3>
         <h4>Industry</h4>
           <p ng-repeat="x in industry">
-            <a href="#!/articles/industry/{{x}}">
-              {{x}}
+            <a href="#!/articles/industry/{{x.enum}}">
+              {{x.string}}
             </a>
           </p>
         <h4>Recommended Articles</h4>
@@ -54,16 +54,9 @@
   </div>
   <!-- Row with the net -->
     <div class="row">
-        <div class="col-md-2">
-            ...
-        </div>
-        <div class="col-md-8" id="net">
-                <div id="chart">
-                    <svg width="960" height="800"></svg>
-                </div>
-        <div class="col-md-2">
-            ...
-        </div>
+        <div class="col-md-12" id="net">
+            <div id="chart">
+            </div>
     </div>
 </div>
 
