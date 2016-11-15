@@ -18,9 +18,7 @@ angular.module('myApp.table', ['ngRoute'])
                     authorString = authorString.concat("\n");
                 }
                 $scope.rowCollection[x].authorString = authorString;
-                console.log($scope.rowCollection[x]);
             }
-            console.log($scope.rowCollection[0].authorString);
             $scope.displayedCollection = result['data']['articles'];
         });
     }

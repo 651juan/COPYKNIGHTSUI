@@ -16,11 +16,24 @@ angular.module('myApp.article', ['ngRoute'])
                 if (ans[0].datasets != undefined) {
                     $scope.industry = ans[0].datasets.industry;
                 }
+                $scope.words = [];
+                for (var value in ans[0].wordCloud) {
+                    var temp = {};
+                    temp.text = value;
+                    temp.weight = ans[0].wordCloud[value];
+                    $scope.words.push(temp);
+                }
+                $('#demo').jQCloud($scope.words, {
+                    width: 500,
+                    height: 350
+                });
+
             });
 
             $http.get('http://localhost:8080/similar/' + $routeParams.id).then(function (result) {
                 $scope.similar = result['data']['articles'];
             });
+
         }
         init();
 }]);
