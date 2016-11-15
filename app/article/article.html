@@ -37,6 +37,12 @@
                 {{x}}
             </a>
         </p>
+        <h4>Industry</h4>
+        <p ng-repeat="x in industry">
+            <a href="#!/articles/industry/{{x.enum}}">
+                {{x.string}}
+            </a>
+        </p>
         <h4>Countries</h4>
         <div style="overflow: auto; height:200px;">
             <p ng-repeat="x in countries">
@@ -45,12 +51,7 @@
                 </a>
             </p>
         </div>
-        <h4>Industry</h4>
-        <p ng-repeat="x in industry">
-            <a href="#!/articles/industry/{{x.enum}}">
-                {{x.string}}
-            </a>
-        </p>
+
     </div>
 
     <div class="col-md-8 article">
