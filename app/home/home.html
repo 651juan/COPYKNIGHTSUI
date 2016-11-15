@@ -1,12 +1,25 @@
 <body>
 
 <div class="container-fluid" id="tiles">
-    <h3>Explore articles by category</h3>
+    <div class="row" id="searchbar">
+        <div class="col-md-12">
+            <h3>Explore by searching on keywords</h3>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <h3>Or explore by filtering on category</h3>
     <div class="row" id="firstrow">
         <div class="col-md-3 tile" id="books">
             <div class="bg-image">
+                <a href="http://www.w3schools.com">
                 <img style = 'height: 100%; width: 100%; object-fit: contain' src="https://images.unsplash.com/photo-1470549638415-0a0755be0619?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=f3b9f6535ca6f638a8513b349cc866f1">
                 <h1>Books</h1>
+                </a>
             </div>
         </div>
         <div class="col-md-3 tile" id="films">
@@ -56,17 +69,7 @@
         </div>
     </div>
 
-    <div class="row" id="searchbar">
-        <div class="col-md-12">
-            <h3>Or explore by using keywords</h3>
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
-                </span>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 
