@@ -11,6 +11,16 @@ angular.module('myApp.table', ['ngRoute'])
     function getData() {
         $http.get(url).then(function (result) {
             $scope.rowCollection  = result['data']['articles'];
+            for (var x in $scope.rowCollection) {
+                var authorString = "";
+                for (var a in $scope.rowCollection[x].authors) {
+                    authorString = authorString.concat($scope.rowCollection[x].authors[a]);
+                    authorString = authorString.concat("\n");
+                }
+                $scope.rowCollection[x].authorString = authorString;
+                console.log($scope.rowCollection[x]);
+            }
+            console.log($scope.rowCollection[0].authorString);
             $scope.displayedCollection = result['data']['articles'];
         });
     }
