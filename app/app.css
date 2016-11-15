@@ -71,6 +71,11 @@
     color: white;
 }
 
+.col-md-3.tile {
+    padding:0px;
+    margin:0px;
+}
+
 #books {
     background-size:100%;
     background-repeat: no-repeat;
