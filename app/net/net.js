@@ -1,4 +1,5 @@
-angular.module('myApp.net', ['ngRoute']).controller('netCtrl', ['articleService', '$http','$scope',function(articleService,$http, $scope) {
+angular.module('myApp.net', ['ngRoute']).controller('netCtrl', ['$http','$scope',function(
+    $http, $scope) {
     initialize().then (
         function (control) {
             doTheTreeViz(control);
@@ -391,6 +392,7 @@ angular.module('myApp.net', ['ngRoute']).controller('netCtrl', ['articleService'
                 }
             }
 
+            console.log(tmpLinks);
             d3Object.d3.data.links = tmpLinks;
             d3Object.d3.data.nodes = tmpNodes;
             dataPromise.resolve(d3Object);
