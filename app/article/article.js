@@ -373,7 +373,7 @@ angular.module('myApp.article', ['ngRoute'])
                 fontSize:15,
                 labelFontSize:15,
                 gravity:0.1,
-                nodeFocusColor:"black",
+                nodeFocusColor:"cyan",
                 nodeFocusRadius:25,
                 nodeFocus:true,
                 linkDistance:150,
@@ -396,7 +396,7 @@ angular.module('myApp.article', ['ngRoute'])
                 for (var reference in articles[article]['references']) {
                     var tmp = articles[article]['references'][reference].trim();
                     if(allArticlesReferences.hasOwnProperty(tmp)){
-                        allArticlesReferences[tmp] += 1;
+                        allArticlesReferences[tmp] = 1;
                     }else{
                         allArticlesReferences[tmp] = 1;
                     }
@@ -412,6 +412,8 @@ angular.module('myApp.article', ['ngRoute'])
                     tmpNodes.push(createNode(node));
                 }
             }
+
+            tmpNodes = changeCurrentArticleColor($scope.name, tmpNodes);
 
             //Creating list of links
             for (var nodeName in tmpNodesObj) {
@@ -509,6 +511,14 @@ angular.module('myApp.article', ['ngRoute'])
                 }
                 return -1;
             }
+
+            function changeCurrentArticleColor(articleName, nodes) {
+                var tmp = getNodeIdx(articleName);
+                var tmpNode = nodes[tmp];
+                tmpNode.group = "MainArticle";
+                return nodes;
+            }
+
         });
         return dataPromise.promise();
     }
