@@ -41,9 +41,73 @@
 
 #net {
   background: lightseagreen !important;
-  min-height: 100px;
+  min-height: 110px;
 
 }
 
+
+#books {
+    background-image: url("http://www.copyrightevidence.org/evidence-wiki/images/f/f5/Book_on.png");
+    background-size:100%;
+    width: 25%;
+    height: 280px;
+    background-repeat: no-repeat;
+}
+
+#films {
+    background-image: url("http://www.copyrightevidence.org/evidence-wiki/images/6/62/Film_on.png");
+    background-size:100%;
+    width: 25%;
+    height: 280px;
+    background-repeat: no-repeat;
+}
+
+#software {
+    background-image: url("http://www.copyrightevidence.org/evidence-wiki/images/6/63/Software_on.png");
+    background-size:100%;
+    width: 25%;
+    height: 280px;
+    background-repeat: no-repeat;
+}
+
+#music {
+    background-image: url("http://www.copyrightevidence.org/evidence-wiki/images/b/b3/Music_on.png");
+    background-size:100%;
+    width: 25%;
+    height: 280px;
+    background-repeat: no-repeat;
+}
+
+#broadcasting {
+    background-image: url("http://www.copyrightevidence.org/evidence-wiki/images/9/93/Broadcasting_on.png");
+    background-size:100%;
+    width: 25%;
+    height: 280px;
+    background-repeat: no-repeat;
+}
+
+#television {
+    background-image: url("http://www.copyrightevidence.org/evidence-wiki/images/f/f5/Television_on.png");
+    background-size:100%;
+    width: 25%;
+    height: 280px;
+    background-repeat: no-repeat;
+}
+
+#education {
+    background-image: url("http://www.copyrightevidence.org/evidence-wiki/images/9/98/Education_on.png");
+    background-size:100%;
+    width: 25%;
+    height: 280px;
+    background-repeat: no-repeat;
+}
+
+#photography {
+    background-image: url("http://www.copyrightevidence.org/evidence-wiki/images/2/2c/Photography_on.png");
+    background-size:100%;
+    width: 25%;
+    height: 280px;
+    background-repeat: no-repeat;
+}
 
 
