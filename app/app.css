@@ -1,5 +1,6 @@
 /* app css stylesheet */
 
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -58,6 +59,18 @@
     margin:0px;
     padding:0px;
     overflow:hidden;
+    opacity:0.5;
+    transition:all 0.3s ease;
+
+}
+
+.bg-image:hover
+{
+    opacity:1;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+
 }
 
 .bg-image img {
@@ -66,8 +79,9 @@
     max-width:100%;
     height:220px;
     margin: 0 auto;
-
 }
+
+
 
 .bg-image h1 {
     position: absolute;
@@ -83,7 +97,7 @@
     margin:0px;
 }
 
-
+body { padding-top: 70px; }
 
 
 #books {

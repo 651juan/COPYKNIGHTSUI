@@ -1,10 +1,5 @@
 <table st-table="displayedCollection" class="table table-striped" st-safe-src="rowCollection">
     <thead>
-    <h2>Search by Keywords</h2>
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search by keywords">
-        <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
                     <script>
                      document.getElementsByClassName('btn btn-default')[0].onclick = function() {
                          var search = document.getElementsByClassName('form-control')[0].value.toLowerCase();
@@ -19,8 +14,7 @@
                                  }
                              });
                     </script>
-                </span>
-    </div>
+
     <h2>{{title}}</h2>
     <tr>
         <th ng-if="rankOn">
