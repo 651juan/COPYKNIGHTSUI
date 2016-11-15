@@ -7,6 +7,4 @@ angular.module('myApp.home', ['ngRoute'])
 
 
 
-
-
     }]);
