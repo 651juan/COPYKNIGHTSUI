@@ -22,6 +22,7 @@ angular.module('myApp.article', ['ngRoute'])
                     var temp = {};
                     temp.text = value;
                     temp.weight = ans[0].wordCloud[value];
+                    temp.link = 'http://localhost:8000/#!/articles/wordcloud/'.concat(value);
                     $scope.words.push(temp);
                 }
                 $('#demo').jQCloud($scope.words, {
