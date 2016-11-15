@@ -13,7 +13,9 @@ angular.module('myApp.article', ['ngRoute'])
                 $scope.citation = ans[0].citation;
                 $scope.title = ans[0].title;
                 $scope.authors = ans[0].authors;
-
+                if (ans[0].datasets != undefined) {
+                    $scope.industry = ans[0].datasets.industry;
+                }
             });
 
             $http.get('http://localhost:8080/similar/' + $routeParams.id).then(function (result) {

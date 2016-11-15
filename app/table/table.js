@@ -22,7 +22,7 @@ angular.module('myApp.table', ['ngRoute'])
             if (type == 'all') {
                 return 'http://localhost:8080/article'
             } else {
-                return 'http://localhost:8080/' + type + '/' + condition;
+                return 'http://localhost:8080/' + type + '/' + condition + '/';
             }
         }
     }

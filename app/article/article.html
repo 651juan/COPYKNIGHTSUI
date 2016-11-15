@@ -25,7 +25,13 @@
     <div class="col-md-2 sidebar-right">
 
       <h3>Categories</h3>
-      <h3>Recommened Articles</h3>
+        <h2>Industry</h2>
+          <div ng-repeat="x in industry">
+            <a href="#!/articles/industry/{{x}}">
+              {{x}}
+            </a>
+          </div>
+        <h3>Recommened Articles</h3>
       <div ng-repeat="x in similar">
         <a href="#!/page/{{x.pageid}}">
           {{x.name}}

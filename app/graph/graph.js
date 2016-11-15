@@ -8,7 +8,7 @@ angular.module('myApp.graph', ['ngRoute']).controller('graphCtrl', ['$http','$sc
         {
             name : 'Country',
             url : 'http://localhost:8080/country',
-            type : 'bar'
+                type : 'bar'
         },
         {
             name : 'Author',
@@ -77,7 +77,8 @@ angular.module('myApp.graph', ['ngRoute']).controller('graphCtrl', ['$http','$sc
             return new Chart(ctx, {
                 type: type,
                 data: data,
-                options: {}
+                options: {
+                }
             });
         });
 
