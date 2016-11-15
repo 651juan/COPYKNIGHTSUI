@@ -1,7 +1,8 @@
 <table st-table="displayedCollection" class="table table-striped" st-safe-src="rowCollection">
     <thead>
+    <h2>Search by Keywords</h2>
     <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for...">
+        <input type="text" class="form-control" placeholder="Search by keywords">
         <span class="input-group-btn">
                 <button class="btn btn-default" type="button">Go!</button>
                     <script>
@@ -23,16 +24,16 @@
     <h2>{{title}}</h2>
     <tr>
         <th ng-if="rankOn">
-            <input st-search="rank" placeholder="search for rank" class="input-sm form-control" type="search"/>
+            <input st-search="rank" placeholder="Filter by rank" class="input-sm form-control" type="search"/>
         </th>
         <th>
-            <input st-search="title" placeholder="search for title" class="input-sm form-control" type="search"/>
+            <input st-search="title" placeholder="Filter by title" class="input-sm form-control" type="search"/>
         </th>
         <th>
-            <input st-search="authorString" placeholder="search for author" class="input-sm form-control" type="search"/>
+            <input st-search="authorString" placeholder="Filter by author" class="input-sm form-control" type="search"/>
         </th>
         <th>
-            <input st-search="year" placeholder="search for year" class="input-sm form-control" type="search"/>
+            <input st-search="year" placeholder="Filter by year" class="input-sm form-control" type="search"/>
         </th>
     </tr>
     <tr>
