@@ -7,6 +7,7 @@ angular.module('myApp', [
   'myApp.article',
   'myApp.dashboard',
     'myApp.net',
+    'myApp.home',
     'myApp.graph',
     'smart-table'
 ]).
@@ -25,6 +26,10 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
       .when("/net", {
           templateUrl: '/net/net.html',
           controller: 'netCtrl'
+      })
+      .when("/home", {
+          templateUrl: '/home/home.html',
+          controller: 'HomeCtrl'
       })
       .when("/dashboard", {
           templateUrl: '/dashboard/dashboard.html',
