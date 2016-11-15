@@ -14,6 +14,7 @@ angular.module('myApp.article', ['ngRoute'])
                 $scope.title = ans[0].title;
                 $scope.authors = ans[0].authors;
                 $scope.abstract = ans[0].abstract;
+                $scope.countries = ans[0].datasets.countries;
                 if (ans[0].datasets != undefined) {
                     $scope.industry = ans[0].datasets.industry;
                 }

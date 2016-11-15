@@ -5,7 +5,8 @@ angular.module('myApp.table', ['ngRoute'])
     $scope.displayedCollection = [];
 
     var url = getUrl($routeParams.type, $routeParams.condition);
-    var title = getTitle($routeParams.type, $routeParams.condition);
+    $scope.title = getTitle($routeParams.type, $routeParams.condition);
+
     getData();
 
     function getData() {
@@ -41,9 +42,13 @@ angular.module('myApp.table', ['ngRoute'])
         } else {
             if (type == 'all') {
                 return 'All Articles'
-            } else {
-                return 'Filtered Article with ' + type + ' = ' + condition;
             }
+            else if (type == 'wordcloud'){
+                return 'Filtered Article with ' + 'keyword' + ' = ' + condition;
+            }
+            else {
+                return 'Filtered Article with ' + type + ' = ' + condition;
+                }
         }
     }
 
