@@ -25,11 +25,13 @@
             </a>
         </p>
         <h4>Countries</h4>
-        <p ng-repeat="x in countries">
-            <a href="#!/articles/country/{{x}}">
-                {{x}}
-            </a>
-        </p>
+        <div style="overflow: auto; height:200px;">
+            <p ng-repeat="x in countries">
+                <a href="#!/articles/country/{{x}}">
+                    {{x}}
+                </a>
+            </p>
+        </div>
     </div>
     <div class="col-md-8 article">
         <h3>Abstract</h3>
@@ -46,11 +48,13 @@
             </a>
           </p>
         <h4>Recommended Articles</h4>
-      <p ng-repeat="x in similar">
-        <a href="#!/page/{{x.pageid}}">
-          {{x.name}}
-        </a>
-      </p>
+        <div style="overflow: auto; height:200px;">
+            <p ng-repeat="x in similar">
+                <a href="#!/page/{{x.pageid}}">
+                  {{x.name}}
+                </a>
+            </p>
+        </div>
     </div>
   </div>
   <!-- Row with the net -->
