@@ -7,44 +7,37 @@
     <h1>Title - {{title}} </h1>
   <!-- First row with the wordcloud -->
   <div class="row">
-      <div class="col-md-2">
-          ...
-      </div>
-    <div class="col-md-8" id="wordcloud">
+    <div class="col-md-12" id="wordcloud">
       <div id="demo"></div>
     </div>
-      <div class="col-md-2">
-          ...
-      </div>
+
   </div>
 
   <!-- Middle row with content -->
   <div class="row">
     <div class="col-md-2 sidebar-left">
-      <h2>Sidebar left</h2>
-        <p>We could make filters here, or something fancy</p>
+        <h3>Authors</h3>
+        <p ng-repeat="x in authors">
+            <a href="#!/articles/author/{{x}}">
+                {{x}}
+            </a>
+        </p>
     </div>
     <div class="col-md-8 article">
-      <h2>Title</h2>
-        <p>{{title}}</p>
-      <h2>Citation</h2>
-        <p>{{citation}}</p>
-      <h2>Authors</h2>
-      <p ng-repeat="x in authors">
-        <a href="#!/articles/author/{{x}}">
-          {{x}}
-        </a>
-      </p>
+        <h3>Abstract</h3>
+        <p>{{abstract}}</p>
+
+
     </div>
     <div class="col-md-2 sidebar-right">
       <h3>Categories</h3>
-        <h2>Industry</h2>
+        <h4>Industry</h4>
           <p ng-repeat="x in industry">
             <a href="#!/articles/industry/{{x}}">
               {{x}}
             </a>
           </p>
-        <h3>Recommended Articles</h3>
+        <h4>Recommended Articles</h4>
       <p ng-repeat="x in similar">
         <a href="#!/page/{{x.pageid}}">
           {{x.name}}
@@ -74,5 +67,9 @@
 
 
 
+<!-- possible to add later:
+<h2>Citation</h2>
+<p>{{citation}}</p>
 
 
+-->

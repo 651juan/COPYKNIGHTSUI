@@ -34,10 +34,9 @@
 
 /* Styling for individual article pages */
 
-#wordcloud {
-  Background: #efe6dc;
-  min-height: 100px;
-
+/* 1. Wordcloud */
+#demo {
+    margin: 15px auto;
 }
 
 #net {
@@ -45,3 +44,6 @@
   min-height: 100px;
 
 }
+
+
+
