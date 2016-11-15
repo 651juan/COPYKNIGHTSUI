@@ -43,6 +43,12 @@ angular.module('myApp.table', ['ngRoute'])
                     authorString = authorString.concat("\n");
                 }
                 $scope.rowCollection[x].authorString = authorString;
+                $scope.rowCollection[x].rank = (x*1)+1;
+                if ($routeParams.type == "wordcloud") {
+                    $scope.rankOn = 1;
+                } else {
+                    $scope.rankOn = 0;
+                }
             }
             $scope.displayedCollection = result['data']['articles'];
         });

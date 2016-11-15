@@ -13,6 +13,7 @@
         </th>
     </tr>
     <tr>
+        <th ng-if="rankOn" st-sort="rank">Relevant</th>
         <th st-sort="title">Title</th>
         <th st-sort="authorString">Author</th>
         <th st-sort="year">Year</th>
@@ -20,6 +21,7 @@
     </thead>
     <tbody>
     <tr ng-repeat="row in displayedCollection">
+        <td ng-if="rankOn">{{row.rank}}</td>
         <td>{{row.title}}</td>
         <td>{{row.authorString}}</td>
         <td>{{row.year}}</td>
