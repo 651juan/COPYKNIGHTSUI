@@ -373,8 +373,6 @@ angular.module('myApp.article', ['ngRoute'])
                 fontSize:15,
                 labelFontSize:15,
                 gravity:0.1,
-                height:960,
-                width:1600,
                 nodeFocusColor:"black",
                 nodeFocusRadius:25,
                 nodeFocus:true,
