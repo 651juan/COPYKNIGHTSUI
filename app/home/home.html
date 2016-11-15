@@ -10,8 +10,7 @@
                 <button class="btn btn-default" type="button">Go!</button>
                     <script>
                      document.getElementsByClassName('btn btn-default')[0].onclick = function() {
-                         var search = document.getElementsByClassName('form-control')[0].value;
-                         console.log(search);
+                         var search = document.getElementsByClassName('form-control')[0].value.toLowerCase();
                          window.location = "http://localhost:8000/#!/articles/wordcloud/" + search;
                      }
 
@@ -96,32 +95,6 @@
                 <img style = 'height: 100%; width: 100%; object-fit: contain' src="https://images.unsplash.com/photo-1432821397715-257962351702?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=de5463c814972a6984e482a63d74d9c7">
                 <h1>Photography</h1>
                 </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="row" id="searchbar">
-        <div class="col-md-12">
-            <h3>Or explore by using keywords</h3>
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
-                    <script>
-                     document.getElementsByClassName('btn btn-default')[0].onclick = function() {
-                         var search = document.getElementsByClassName('form-control')[0].value.toLowerCase();
-                         window.location = "http://localhost:8000/#!/articles/wordcloud/" + search;
-                     }
-
-                     document.getElementsByClassName('form-control')[0]
-                             .addEventListener("keyup", function(event) {
-                                 event.preventDefault();
-                                 if (event.keyCode == 13) {
-                                     document.getElementsByClassName('btn btn-default')[0].click();
-                                 }
-                             });
-                    </script>
-                </span>
             </div>
         </div>
     </div>
