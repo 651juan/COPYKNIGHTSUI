@@ -4,7 +4,27 @@ angular.module('myApp.article', ['ngRoute'])
 
 
 .controller('ArticleCtrl', ['$routeParams','$filter', '$http', '$scope',function($routeParams, $filter, $http, $scope) {
-  console.log('cont2');
+    var industries = {
+        INDUSTRY_1 : "Advertising" ,
+        INDUSTRY_2 : "Architectural",
+        INDUSTRY_3 : "Computer consultancy",
+        INDUSTRY_4 : "Computer programming",
+        INDUSTRY_5 : "Creative, arts and entertainment",
+        INDUSTRY_6 : "Cultural education",
+        INDUSTRY_7 : "Film and motion pictures",
+        INDUSTRY_8 : "PR and communication",
+        INDUSTRY_9 : "Photographic activities",
+        INDUSTRY_10: "Programming and broadcasting",
+        INDUSTRY_11: "Publishing of books, periodicals and other publishing",
+        INDUSTRY_12: "Software publishing (including video games)",
+        INDUSTRY_13: "Sound recording and music publishing",
+        INDUSTRY_14: "Specialised design",
+        INDUSTRY_15: "Television programmes",
+        INDUSTRY_16: "Translation and interpretation",
+        UNKNOWN_INDUSTRY: "UNKNOWN"
+
+    };
+
         function init() {
             $http.get('http://localhost:8080/article').then(function (result) {
                 var ans = result['data']['articles'].filter(function (el) {
@@ -15,6 +35,11 @@ angular.module('myApp.article', ['ngRoute'])
                 $scope.authors = ans[0].authors;
                 $scope.abstract = ans[0].abstract;
                 if (ans[0].datasets != undefined) {
+                    var IndustryStrings = [];
+                    for (var x in ans[0].datasets.industry) {
+                        IndustryStrings[x] = getIndustryString(ans[0].datasets.industry[x]);
+                    }
+                    $scope.industryString = IndustryStrings;
                     $scope.industry = ans[0].datasets.industry;
                 }
                 $scope.words = [];
@@ -37,5 +62,10 @@ angular.module('myApp.article', ['ngRoute'])
             });
 
         }
-        init();
+        function getIndustryString(string) {
+            return industries[string];
+        }
+
+
+    init();
 }]);
