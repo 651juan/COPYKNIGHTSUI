@@ -3,8 +3,8 @@
 </head>
 
 <body>
-<h1> Article Overview</h1>
 <div class="container-fluid">
+    <h1>Title - {{title}} </h1>
   <!-- First row with the wordcloud -->
   <div class="row">
       <div class="col-md-2">
@@ -44,7 +44,7 @@
               {{x}}
             </a>
           </p>
-        <h3>Recommened Articles</h3>
+        <h3>Recommended Articles</h3>
       <p ng-repeat="x in similar">
         <a href="#!/page/{{x.pageid}}">
           {{x.name}}
