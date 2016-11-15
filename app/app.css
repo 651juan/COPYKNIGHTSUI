@@ -45,6 +45,10 @@
 
 }
 
+#searchbar{
+    margin-bottom:30px;
+}
+
 #secondrow {
     margin-bottom:30px;
 }
@@ -53,13 +57,16 @@
     position: relative;
     margin:0px;
     padding:0px;
+    overflow:hidden;
 }
 
 .bg-image img {
     display: block;
-    width: 100%;
+    max-width:100%;
+    max-width:100%;
+    height:220px;
     margin: 0 auto;
-    max-width: 1200px; /* corresponds to max height of 450px */
+
 }
 
 .bg-image h1 {
