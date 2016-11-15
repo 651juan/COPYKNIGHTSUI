@@ -1,5 +1,16 @@
 <table st-table="displayedCollection" class="table table-striped" st-safe-src="rowCollection">
     <thead>
+    <div class="row" id="searchbar">
+        <div class="col-md-12">
+            <h3>Explore by searching on keywords</h3>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+                </span>
+            </div>
+        </div>
+    </div>
     <h2>{{title}}</h2>
     <tr>
         <th ng-if="rankOn">
