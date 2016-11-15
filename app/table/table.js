@@ -74,14 +74,14 @@ angular.module('myApp.table', ['ngRoute'])
                 return 'All Articles'
             }
             else if (type == 'industry') {
-                return 'Filtered Article with ' + type + ' = ' + getIndustryString(condition);
+                return 'Filtered Articles by ' + type + ' equal to  ' + getIndustryString(condition);
             }
             else if (type == 'wordcloud'){
-                return 'Filtered Article with ' + 'keyword' + ' = ' + condition;
+                return 'Filtered Articles by ' + 'keyword' + ' equal to  ' + condition;
             }
             else {
-                return 'Filtered Article with ' + type + ' = ' + condition;
-                }
+                return 'Filtered Articles by ' + type + ' equal to ' + condition;
+            }
         }
     }
 
