@@ -29,7 +29,7 @@ angular.module('myApp.table', ['ngRoute'])
 
 
         var url = getUrl($routeParams.type, $routeParams.condition);
-    $scope.title = getTitle($routeParams.type, $routeParams.condition);
+        $scope.title = getTitle($routeParams.type, $routeParams.condition);
 
     getData();
 

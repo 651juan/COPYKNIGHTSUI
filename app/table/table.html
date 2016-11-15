@@ -2,6 +2,9 @@
     <thead>
     <h2>{{title}}</h2>
     <tr>
+        <th ng-if="rankOn">
+            <input st-search="rank" placeholder="search for rank" class="input-sm form-control" type="search"/>
+        </th>
         <th>
             <input st-search="title" placeholder="search for title" class="input-sm form-control" type="search"/>
         </th>
