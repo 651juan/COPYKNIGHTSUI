@@ -12,8 +12,7 @@
                 <button class="btn btn-default" type="button">Go!</button>
                     <script>
                      document.getElementsByClassName('btn btn-default')[0].onclick = function() {
-                         var search = document.getElementsByClassName('form-control')[0].value;
-                         console.log(search);
+                         var search = document.getElementsByClassName('form-control')[0].value.toLowerCase();
                          window.location = "http://localhost:8000/#!/articles/wordcloud/" + search;
                      }
 
