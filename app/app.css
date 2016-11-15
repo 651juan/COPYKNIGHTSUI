@@ -31,3 +31,17 @@
 .st-sort-descent:before{
   content: '\25BC';
 }
+
+/* Styling for individual article pages */
+
+#wordcloud {
+  Background: lightcoral !important;
+  min-height: 100px;
+
+}
+
+#net {
+  background: lightseagreen !important;
+  min-height: 100px;
+
+}
