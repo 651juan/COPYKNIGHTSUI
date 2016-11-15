@@ -5,11 +5,6 @@
 
 <body>
 
-<div class="container-fluid">
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search by keywords">
-        <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
                     <script>
                      document.getElementsByClassName('btn btn-default')[0].onclick = function() {
                          var search = document.getElementsByClassName('form-control')[0].value.toLowerCase();
@@ -24,8 +19,7 @@
                                  }
                              });
                     </script>
-                </span>
-    </div>
+
 <div class="container-fluid">
     <h2>{{title}} </h2>
   <!-- First row with the wordcloud -->
