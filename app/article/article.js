@@ -34,15 +34,16 @@ angular.module('myApp.article', ['ngRoute'])
                 $scope.title = ans[0].title;
                 $scope.authors = ans[0].authors;
                 $scope.abstract = ans[0].abstract;
-                $scope.countries = ans[0].datasets.countries;
                 $scope.name = ans[0].name;
                 if (ans[0].datasets != undefined) {
-                    var IndustryStrings = [];
+                    $scope.countries = ans[0].datasets.countries;
+                    $scope.industry = [];
                     for (var x in ans[0].datasets.industry) {
-                        IndustryStrings[x] = getIndustryString(ans[0].datasets.industry[x]);
+                        var tempIndustry = {};
+                        tempIndustry.enum = ans[0].datasets.industry[x];
+                        tempIndustry.string = getIndustryString(ans[0].datasets.industry[x]);
+                        $scope.industry.push(tempIndustry);
                     }
-                    $scope.industryString = IndustryStrings;
-                    $scope.industry = ans[0].datasets.industry;
                 }
                 $scope.words = [];
                 for (var value in ans[0].wordCloud) {
