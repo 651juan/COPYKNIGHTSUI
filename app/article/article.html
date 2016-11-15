@@ -6,18 +6,27 @@
 <body>
 
 <div class="container-fluid">
-    <div class="row" id="searchbar">
-        <div class="col-md-12">
-            <h3>Explore by searching on keywords</h3>
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-            </div>
-        </div>
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+                    <script>
+                     document.getElementsByClassName('btn btn-default')[0].onclick = function() {
+                         var search = document.getElementsByClassName('form-control')[0].value;
+                         console.log(search);
+                         window.location = "http://localhost:8000/#!/articles/wordcloud/" + search;
+                     }
+
+                     document.getElementsByClassName('form-control')[0]
+                             .addEventListener("keyup", function(event) {
+                                 event.preventDefault();
+                                 if (event.keyCode == 13) {
+                                     document.getElementsByClassName('btn btn-default')[0].click();
+                                 }
+                             });
+                    </script>
+                </span>
     </div>
-</div>
 <div class="container-fluid">
     <h2>{{title}} </h2>
   <!-- First row with the wordcloud -->
